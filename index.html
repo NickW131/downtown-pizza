@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Downtown Pizzeria Order</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="card">
+        <form action="#">
+            <h1>Downtown Pizzeria</h1>
+            <p>Place your pizza order below.</p>
+
+            <!--Customer Information-->
+            <fieldset>
+                <legend>Customer Information</legend>
+                <div class="form-grid">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required minlength="2" placeholder="Name for Order">
+
+                    <label for="address">Address:</label>
+                    <input type="text" id="address" name="address" required placeholder="111-11111 11 ST NW">
+
+                    <label for="phone">Phone:</label>
+                    <input type="tel" id="phone" name="phone" required pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890">
+                </div>
+            </fieldset>
+
+            <!--The Order-->
+            <fieldset>
+                <legend>The Order</legend>
+                <div class="form-grid">
+                    <label>Crust:</label>
+                    <div class="crust-options">
+                        <label><input type="radio" name="crust" value="thin" required>Thin</label>
+                        <label><input type="radio" name="crust" value="classic">Classic</label>
+                        <label><input type="radio" name="crust" value="deep-dish">Deep Dish</label>
+                        <label><input type="radio" name="crust" value="california-style">California Style</label>
+                        <label><input type="radio" name="crust" value="detroit-style">Detroit Style</label>
+                    </div>
+
+                    <label>Toppings:</label>
+                    <div class="topping-options">
+                        <label><input type="checkbox" name="toppings" value="pepperoni">Pepperoni</label>
+                        <label><input type="checkbox" name="toppings" value="mushroom">Mushroom</label>
+                        <label><input type="checkbox" name="toppings"value="olives">Olives</label>
+                        <label><input type="checkbox" name="toppings" value="green-peppers">Green Peppers</label>
+                        <label><input type="checkbox" name="toppings" value="pineapple">Pineapple</label>
+                        <label><input type="checkbox" name="toppings" value="grated-parmesan">Grated Parmesan</label>
+                    </div>
+
+                    <label for="quantity">Quantity:</label>
+                    <input type="number" id="quantity" name="quantity" required min="1" max="10">
+                </div>
+            </fieldset>
+
+            <!--Delivery and Payment-->
+            <fieldset>
+                <legend>Delivery and Payment</legend>
+
+                <div class="form-grid">
+                    <label for="instructions">Delivery Instructions:</label>
+                    <textarea id="instructions" name="instructions" placeholder="No specific instructions for delivery."></textarea>
+
+                    <label for="delivery">Preferred Delivery Date and Time:</label>
+                    <input type="datetime-local" id="delivery" name="delivery" required  min="2026-10-07T00:00">
+
+                    <label for="payment">Payment Method:</label>
+                    <select id="payment" name="payment" required>
+                        <option value="">Select a payment method</option>
+                        <option value="cash">Cash</option>
+                        <option value="card">Card</option>
+                        <option value="debit">Debit</option>
+                    </select>
+                </div>
+            </fieldset>
+
+            <div class="buttons"> 
+            <button type="submit">Submit Order</button>
+            <button type="reset">Reset</button>'
+            </div>
+        </form>
+
+        <!--Order Summary-->
+        <aside>
+            <h2>Order Summary</h2>
+            <table>
+                <caption>Example Order Summary</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Item</th>
+                        <th scope="col">Details</th>
+                        <th scope="col">Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Base pizza</td>
+                        <td>Large (12&quot;), Thin crust</td>
+                        <td>$16.99</td>
+                    </tr>
+                    <tr>
+                        <td>Toppings</td>
+                        <td>Mushrooms, Olives, Extra cheese</td>
+                        <td>$4.50</td>
+                    </tr>
+                    <tr>
+                        <td>Delivery fee</td>
+                        <td>Standard delivery</td>
+                        <td>$3.99</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th scope="row">Total</th>
+                        <td>Example total</td>
+                        <td>$25.48</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </aside>
+    </main>
+</body>
+</html>

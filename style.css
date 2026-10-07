@@ -1,0 +1,147 @@
+:root {
+    --primary: #eee;
+    --offcolor: #ccc;
+    --hover: #ddd;
+    --green: green;
+    --red: red;
+}
+
+body {
+    font-family: sans-serif;
+    background: var(--primary);
+    padding: 20px;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+form, aside {
+    background-color: var(--primary);
+    padding: 20px;
+}
+
+/* Each field set */
+fieldset {
+    margin-bottom: 20px;
+    border: 1px solid var(--offcolor);
+    padding: 15px;
+}
+
+/* Each form-grid */ 
+.form-grid{
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 10px;
+    align-items: center;
+}
+
+/* children labels of the feild set */
+/* align text to the input feild (the right)*/
+.form-grid > label {
+    text-align: right;
+    font-weight: bold;
+}
+
+/* children input,textarea,and selcet of the feild set */
+/* Use the whole width of area, border-box to make sure it doesn't overlap with the edge */
+.form-grid > input,
+.form-grid > textarea,
+.form-grid > select {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* all children of the feild set Below*/
+/* center in the space provided */ 
+.form-grid > label,
+.form-grid > input,
+.form-grid > textarea,
+.form-grid > select {
+    align-self: center;
+}
+
+/* For crust-options class */
+/* use flex display (options next to each other), don't wrap (Dont move to next line)*/ 
+.crust-options {
+    display: flex;
+    gap: 15px;
+    flex-wrap: nowrap;
+}
+
+/* For topping-options class */
+/* use flex display (options next to each other),  wrap (Allow these options to wrap onto another line)*/ 
+.topping-options {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* For buttons class */
+/* use flex display (options next to each other),  align them to the left side*/ 
+.buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-start;
+}
+
+/* For the table */
+/* Use the full width, merge adjacent elements (For zebra striping)*/
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* For table elements */
+/* align text to left side */
+th, td {
+    padding: 10px;
+    border: 1px solid var(--offcolor);
+    text-align: left;
+}
+
+/* For the rows inside the table */
+/* every even row change the background color */
+tbody tr:nth-child(even) {
+    background: var(--primary);
+} 
+
+/* For the rows inside the table */
+/* When hovering over them change the background color */
+tbody tr:hover {
+    background: var(--hover);
+}
+
+/* After user input and selections */
+/* set color to green if the user enters valid input */
+input:user-valid,
+select:user-valid {
+    border: 2px solid var(--green);
+}
+
+/* After user input and selections */
+/* set color to red if the user enters invalid input */
+input:user-invalid,
+select:user-invalid {
+    border: 2px solid var(--red);
+}
+
+/* Responsive breakpoint */
+@media (max-width: 600px) {
+    main {
+        grid-template-columns: 1fr;
+    }
+    fieldset {
+        grid-template-columns: 1fr;
+    }
+    fieldset > label {
+        text-align: left;
+    }
+    .crust-options {
+        flex-wrap: wrap;
+    }
+}
